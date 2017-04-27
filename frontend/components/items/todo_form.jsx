@@ -14,8 +14,16 @@ class ItemForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   };
 
-  handleSubmit(){
-    
+  handleSubmit(e){
+    e.preventDefault();
+    const newItem = Object.assign({},this.state, {id: uniqueId()});
+    this.props.receiveItem(newItem);
+    this.setState({
+      title: "",
+      qty: 0,
+      price: 0,
+      total: 0
+    })
   }
 
   render(){

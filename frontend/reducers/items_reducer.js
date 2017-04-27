@@ -21,7 +21,7 @@ const ItemsReducer = (state = initialState, action) => {
   switch(action.type) {
     case RECEIVE_ITEMS:
       const newState = {};
-      action.items.forEach(item => nextState[item.id] = item);
+      action.items.forEach(item => newState[item.id] = item);
       return newState;
     case RECEIVE_ITEM:
       const newItem = {[action.item.id]: action.item}

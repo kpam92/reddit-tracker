@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import {receiveItem, receiveItems } from './actions/item_actions';
-import App from './components/app';
+import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
   const store = configureStore;
@@ -10,5 +10,5 @@ document.addEventListener('DOMContentLoaded', () => {
   window.receiveItem = receiveItem;
   window.receiveItems = receiveItems;
   const root = document.getElementById('content');
-  ReactDOM.render(<App/>, root)
+  ReactDOM.render(<Root store={store}/>, root)
 });

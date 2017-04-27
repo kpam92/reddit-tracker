@@ -1,8 +1,8 @@
 import React from 'react';
 
 
-class IndexForm extends React.Component {
+class ItemForm extends React.Component {
 
 };
 
-export default IndexForm;
+export default ItemForm;

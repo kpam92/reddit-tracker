@@ -26,6 +26,10 @@ class ItemForm extends React.Component {
     })
   }
 
+  update(property) {
+    return e => this.setState({[property]: e.target.value})
+  }
+
   render() {
     return (
       <form className="todo-form" onSubmit={this.handleSubmit}>
@@ -38,14 +42,14 @@ class ItemForm extends React.Component {
             onChange={this.update('title')}
             required/>
         </label>
-        <label>Body:
+        <label>Qty:
           <textarea
             className="input"
             ref="body"
             cols='20'
-            value={this.state.body}
+            value={this.state.qty}
             rows='5'
-            placeholder="2% or whatever is on sale!"
+            placeholder="1"
             onChange={this.update('body')}
             required></textarea>
         </label>

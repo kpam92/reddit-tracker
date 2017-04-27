@@ -1,4 +1,5 @@
 import React from 'react';
+import ItemForm from './item_form';
 
 class ItemIndex extends React.Component {
   constructor(){
@@ -19,6 +20,7 @@ class ItemIndex extends React.Component {
             </tr>
           </tbody>
         </table>
+        <ItemForm receiveItem={this.props.receiveItem}/>
       </div>
     )
   };

@@ -1,5 +1,5 @@
 import {RECEIVE_ITEM, RECEIVE_ITEMS} from '../actions/item_actions'
-
+import merge from 'lodash/merge';
 const initialState = {
   1: {
     id: 1,
@@ -19,6 +19,13 @@ const initialState = {
 
 const ItemsReducer = (state = initialState, action) => {
   switch(action.type) {
+    case RECEIVE_ITEMS:
+      const newState = {};
+      action.items.forEach(item => nextState[item.id] = item);
+      return newState;
+    case RECEIVE_ITEM:
+      const newItem = {[action.item.id]: action.item}
+      return merge({},state,newItem);
     default:
       return state;
   }

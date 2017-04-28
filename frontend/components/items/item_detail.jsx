@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import ModalStyle from './modal_style'
+import ModalStyle from './modal_style';
 
 
 class ItemDetail extends React.Component {
@@ -93,7 +93,7 @@ class ItemDetail extends React.Component {
               onRequestClose={this.onModalClose}
               style={ModalStyle}
               onAfterOpen={this.onModalOpen}>
-              <a className="modal-close" onClick={this.onModalClose}><img src="http://res.cloudinary.com/dt5viyxyq/image/upload/c_scale,h_41/v1472778565/x_alt-128_p7d2vo.png"/></a>
+              <a className="modal-close" onClick={this.onModalClose}><img width="20" src="http://res.cloudinary.com/dt5viyxyq/image/upload/c_scale,h_41/v1472778565/x_alt-128_p7d2vo.png"/></a>
 
               <div className='modal-container'>
                 <form className="update-form-form" onSubmit={this.handleSubmit}>

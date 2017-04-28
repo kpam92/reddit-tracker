@@ -9,7 +9,7 @@ class TotalAmount extends React.Component {
   }
   render(){
     return(
-      <div>
+      <div className='grand-total'>
         <h4>Subtotal: {this.props.amount.subTotal}</h4>
         <h4>Tax(5%): {this.props.amount.tax}</h4>
         <h4>Total: {this.props.amount.total}</h4>

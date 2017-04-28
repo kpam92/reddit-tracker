@@ -48,6 +48,7 @@ const exampleTotalAmountState = {
 The `TotalAmount` component renders each variable above, and state changes through actions involving item creation,edit, and deletion.
 
 ## Actions
+  The actions below occur when the user creates, edits, and deletes items.
 
 ###Items
 

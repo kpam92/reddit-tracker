@@ -45,13 +45,22 @@ class ItemForm extends React.Component {
         <label>Qty:
           <input
             className="input"
-            ref="body"
+            ref="qty"
             value={this.state.qty}
             placeholder="1"
             onChange={this.update('qty')}
             required></input>
         </label>
-        <button className="create-button">Create Todo!</button>
+        <label>Price:$
+          <input
+            className="input"
+            ref="price"
+            value={this.state.price}
+            placeholder="(no commas)"
+            onChange={this.update('price')}
+            required></input>
+        </label>
+        <button className="create-button">Add item</button>
       </form>
     );
   }

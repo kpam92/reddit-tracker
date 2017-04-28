@@ -6,9 +6,9 @@ class ItemForm extends React.Component {
     super(props);
     this.state = {
       title: "",
-      qty: 0,
-      price: 0,
-      total: 0
+      qty: "",
+      price: "",
+      total: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,9 +20,9 @@ class ItemForm extends React.Component {
     this.props.receiveItem(newItem);
     this.setState({
       title: "",
-      qty: 0,
-      price: 0,
-      total: 0
+      qty: "",
+      price: "",
+      total: ""
     })
   }
 
@@ -43,15 +43,13 @@ class ItemForm extends React.Component {
             required/>
         </label>
         <label>Qty:
-          <textarea
+          <input
             className="input"
             ref="body"
-            cols='20'
             value={this.state.qty}
-            rows='5'
             placeholder="1"
-            onChange={this.update('body')}
-            required></textarea>
+            onChange={this.update('qty')}
+            required></input>
         </label>
         <button className="create-button">Create Todo!</button>
       </form>

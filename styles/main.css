@@ -17,7 +17,7 @@ html, body, section, h1, h2 {
   width:850px;
   margin-right: auto;
   margin-left: auto;
-  background: yellow;
+  background: #eaeaea;
 }
 
 table {
@@ -57,7 +57,7 @@ button {
 }
 
 .grand-total {
-  background: green;
+  background: #eaeaea;
   float: left;
   width: 224px;
   text-align: left;
@@ -67,7 +67,7 @@ button {
 }
 
 .center {
-  background: orange;
+  background: #f2f2f2;
   width: 618px;
   float: left;
   margin-right: 8px;
@@ -77,4 +77,10 @@ button {
 span {
   font-weight:100;
   20px;
+}
+
+.grand {
+  background: yellow;
+  font-weight: 400;
+  font-size: 25px;
 }

@@ -13429,8 +13429,13 @@ var TotalAmount = function (_React$Component) {
             null,
             'Total:'
           ),
-          ' $',
-          this.props.amount.total
+          ' ',
+          _react2.default.createElement(
+            'span',
+            { className: 'grand' },
+            '$',
+            this.props.amount.total
+          )
         )
       );
     }

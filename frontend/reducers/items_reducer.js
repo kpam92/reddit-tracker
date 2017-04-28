@@ -27,8 +27,8 @@ const ItemsReducer = (state = initialState, action) => {
       const newItem = {[action.item.id]: action.item}
       return merge({},state,newItem);
     case REMOVE_ITEM:
-      nextState = merge({},state);
-      delete nextState[action.todo_id];
+      const nextState = merge({},state);
+      delete nextState[action.item_id];
       return nextState;
     default:
       return state;

@@ -3,9 +3,13 @@ import React from 'react';
 class ItemDetail extends React.Component {
   constructor(props){
     super(props);
-
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
+  handleDelete(e){
+    e.preventDefault();
+    this.props.removeItem(this.props.item.id);
+  }
   render(){
     const { item } = this.props;
     return(
@@ -16,7 +20,7 @@ class ItemDetail extends React.Component {
           <th>${item.price}</th>
           <th>${item.total}</th>
           <th><button>Edit Item</button></th>
-          <th><button>Remove</button></th>
+          <th><button onClick={this.handleDelete}>Remove</button></th>
         </tr>
       </tbody>
 

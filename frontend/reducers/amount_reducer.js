@@ -1,4 +1,4 @@
-import { CHANGE_AMOUNT } from '../actions/amount_actions'
+import { UPDATE_AMOUNT, CHANGE_AMOUNT } from '../actions/amount_actions'
 import merge from 'lodash/merge';
 
 const initialState = {

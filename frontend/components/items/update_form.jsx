@@ -18,17 +18,11 @@ class UpdateForm extends React.Component {
   };
 
   handleSubmit(e){
-    debugger;
+    // debugger;
     e.preventDefault();
     const newTotal = (parseFloat(this.state.price) * parseFloat(this.state.qty)).toFixed(2);
     const updatedItem = Object.assign({},this.state, { total: newTotal });
     this.props.updateItem(updatedItem);
-    // this.setState({
-    //   title: "",
-    //   qty: "",
-    //   price: "",
-    //   total: ""
-    // })
   }
 
   update(property) {
@@ -37,6 +31,7 @@ class UpdateForm extends React.Component {
   update_money(property) {
     return e => this.setState({[property]: parseFloat(e.target.value).toFixed(2)})
   }
+
   render() {
     return (
       <form className="todo-form" onSubmit={this.handleSubmit}>

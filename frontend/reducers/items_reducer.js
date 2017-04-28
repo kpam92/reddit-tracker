@@ -31,10 +31,8 @@ const ItemsReducer = (state = initialState, action) => {
       delete nextState[action.item_id];
       return nextState;
     case UPDATE_ITEM:
-      debugger;
       const updatedState = merge({},state);
       updatedState[action.item.id] = action.item;
-      debugger;
       return updatedState;
     default:
       return state;

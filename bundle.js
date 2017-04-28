@@ -13529,21 +13529,13 @@ var AmountReducer = function AmountReducer() {
   var action = arguments[1];
 
   switch (action.type) {
-    case _amount_actions.UPDATE_AMOUNT:
-      // going to make it a number in the function call
-      var newSubTotal = (action.total + parseFloat(state.subTotal)).toFixed(2);
+    case _amount_actions.CHANGE_AMOUNT:
+      var difference = (parseFloat(action.newTotal) - parseFloat(action.oldTotal)).toFixed(2);
+      var newSubTotal = (parseFloat(difference) + parseFloat(state.subTotal)).toFixed(2);
       var newTax = (parseFloat(newSubTotal) * .05).toFixed(2);
       var newTotal = (parseFloat(newSubTotal) + parseFloat(newTax)).toFixed(2);
       var updatedState = { subTotal: newSubTotal, tax: newTax, total: newTotal };
       return updatedState;
-    case _amount_actions.CHANGE_AMOUNT:
-      // going to make it a number in the function call
-      var difference = (parseFloat(action.newTotal) - parseFloat(action.oldTotal)).toFixed(2);
-      var newSubTotal1 = (parseFloat(difference) + parseFloat(state.subTotal)).toFixed(2);
-      var newTax1 = (parseFloat(newSubTotal1) * .05).toFixed(2);
-      var newTotal1 = (parseFloat(newSubTotal1) + parseFloat(newTax1)).toFixed(2);
-      var updatedState1 = { subTotal: newSubTotal1, tax: newTax1, total: newTotal1 };
-      return updatedState1;
     default:
       return state;
   }

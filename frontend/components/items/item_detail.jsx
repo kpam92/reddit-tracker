@@ -44,7 +44,8 @@ class ItemDetail extends React.Component {
 // functions to handle removing item and updating item
   handleDelete(e){
     e.preventDefault();
-    const { removeItem, item } = this.props;
+    const { removeItem, item, changeAmount} = this.props;
+    changeAmount(item.total,0)
     removeItem(item.id);
   }
 

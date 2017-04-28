@@ -1,7 +1,7 @@
 import React from 'react';
 import ItemForm from './item_form';
 import ItemDetail from './item_detail';
-import TotalAmount from '../total_amount/total_amount';
+import TotalAmountContainer from '../total_amount/total_amount_container';
 
 class ItemIndex extends React.Component {
   constructor(){
@@ -34,7 +34,7 @@ class ItemIndex extends React.Component {
           </tbody>
           {itemDetails}
         </table>
-        <TotalAmount/>
+        <TotalAmountContainer/>
       </div>
     )
   };

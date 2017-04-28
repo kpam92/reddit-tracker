@@ -7,8 +7,21 @@ class ItemDetail extends React.Component {
   }
 
   render(){
+    const { item } = this.props;
     return(
-      <h1>hhi</h1>
+      <tbody>
+        <tr>
+          <tr>
+            <th>{item.title}</th>
+            <th>{item.qty}</th>
+            <th>${item.price}</th>
+            <th>${item.total}</th>
+            <th><button>Edit Item</button></th>
+            <th><button>Remove</button></th>
+          </tr>
+        </tr>
+      </tbody>
+
     )
   }
 };

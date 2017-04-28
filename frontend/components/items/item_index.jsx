@@ -27,8 +27,8 @@ class ItemIndex extends React.Component {
               <th>Price</th>
               <th>Total</th>
             </tr>
-            {itemDetails}
           </tbody>
+          {itemDetails}
         </table>
         <ItemForm receiveItem={receiveItem}/>
       </div>

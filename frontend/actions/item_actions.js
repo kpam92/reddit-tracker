@@ -2,6 +2,7 @@
 
 export const RECEIVE_ITEM = "RECEIVE_ITEM";
 export const RECEIVE_ITEMS = "RECEIVE_ITEMS";
+export const REMOVE_ITEM = "REMOVE_ITEM";
 
 export const receiveItem = item => ({
   type: RECEIVE_ITEM,
@@ -11,4 +12,9 @@ export const receiveItem = item => ({
 export const receiveItems = items => ({
   type: RECEIVE_ITEMS,
   items
+});
+
+export const removeItem = item => ({
+  type: REMOVE_ITEM,
+  item
 });

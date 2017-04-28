@@ -48,13 +48,12 @@ const exampleTotalAmountState = {
 The `TotalAmount` component renders each variable above, and state changes through actions involving item creation,edit, and deletion.
 
 ## Actions
-  The actions below occur when the user creates, edits, and deletes items.
 
-###Items
+### Items
 
   Items have three actions, receiveItem(item), updateItem(item), and removeItem(item_id). Each of these, except removeItem, takes an entire item as an argument, and either adds it to state, or updates its existing copy. removeItem finds and deletes the object in state with matching id.
 
-###Total Amount
+### Total Amount
 
   The only action that deals with total amount is changeAmount(oldAmount,newAmount), which takes an old amount, and the new amount. This is called after each of three item actions. the old amount is subtracted from the new amount, and the result is then added to the states subtotal; calculations for the new tax and new grand total follow.
   ```javascript

@@ -59,15 +59,16 @@ class ItemDetail extends React.Component {
 
   render(){
     const { item, updateItem } = this.props;
-
+    const fixedPrice = (parseInt(item.price)).toFixed(2);
+    const fixedTotal = (parseInt(item.total)).toFixed(2);
     return(
 
       <tbody>
         <tr>
           <td>{item.title}</td>
           <td>{item.qty}</td>
-          <td>${item.price}</td>
-          <td>${item.total}</td>
+          <td>${fixedPrice}</td>
+          <td>${fixedTotal}</td>
           <td><button onClick={this._handleClick.bind(this)}>Edit Item</button></td>
           <td><button onClick={this.handleDelete}>Remove</button></td>
           <td>

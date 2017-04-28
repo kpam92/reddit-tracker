@@ -14,7 +14,7 @@ export const receiveItems = items => ({
   items
 });
 
-export const removeItem = item => ({
+export const removeItem = item_id => ({
   type: REMOVE_ITEM,
-  item
+  item_id
 });

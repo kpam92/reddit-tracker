@@ -16,7 +16,9 @@ class ItemForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    const newItem = Object.assign({},this.state, {id: uniqueId()});
+    const newTotal = parseFloat(this.state.price) * parseFloat(this.state.qty);
+    const newItem = Object.assign({},this.state, {id: uniqueId(), total: newTotal});
+    debugger;
     this.props.receiveItem(newItem);
     this.setState({
       title: "",
@@ -46,6 +48,8 @@ class ItemForm extends React.Component {
           <input
             className="input"
             ref="qty"
+            type="number"
+            min='0'
             value={this.state.qty}
             placeholder="1"
             onChange={this.update('qty')}
@@ -54,6 +58,9 @@ class ItemForm extends React.Component {
         <label>Price:$
           <input
             className="input"
+            type="number"
+            step=".01"
+            min ='0'
             ref="price"
             value={this.state.price}
             placeholder="(no commas)"

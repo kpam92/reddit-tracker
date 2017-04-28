@@ -11,14 +11,12 @@ class ItemDetail extends React.Component {
     return(
       <tbody>
         <tr>
-          <tr>
-            <th>{item.title}</th>
-            <th>{item.qty}</th>
-            <th>${item.price}</th>
-            <th>${item.total}</th>
-            <th><button>Edit Item</button></th>
-            <th><button>Remove</button></th>
-          </tr>
+          <th>{item.title}</th>
+          <th>{item.qty}</th>
+          <th>${item.price}</th>
+          <th>${item.total}</th>
+          <th><button>Edit Item</button></th>
+          <th><button>Remove</button></th>
         </tr>
       </tbody>
 

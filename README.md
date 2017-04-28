@@ -4,9 +4,10 @@
 
 [host]: https://kpam92.github.io/react-invoice/
 
-![image of app](styles/screenshot.png)
 
 This Invoice Editor is a single page React/Redux application for creating personal invoices, where users can create, edit, and delete items.
+
+![image of app](styles/screenshot.png)
 
 ## Features & Implementation
 

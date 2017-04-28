@@ -22,7 +22,7 @@ class ItemIndex extends React.Component {
       )
     );
     return(
-      <div>
+      <div className='main'>
         <div className='header'>
           <h1>Invoice Editor</h1>
           <ItemForm receiveItem={receiveItem} changeAmount = {changeAmount}/>

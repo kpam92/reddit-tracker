@@ -84,7 +84,7 @@ class ItemDetail extends React.Component {
           <td>${fixedPrice}</td>
           <td>${fixedTotal}</td>
           <td><button onClick={this._handleClick.bind(this)}>Edit Item</button></td>
-          <td><button onClick={this.handleDelete}>Remove</button></td>
+          <td><img width="15"src='http://res.cloudinary.com/dt5viyxyq/image/upload/c_scale,h_41/v1472778565/x_alt-128_p7d2vo.png' onClick={this.handleDelete}/></td>
           <td>
             <Modal
               contentLabel="update-form"

@@ -12915,11 +12915,7 @@ var ItemDetail = function (_React$Component) {
           _react2.default.createElement(
             'td',
             null,
-            _react2.default.createElement(
-              'button',
-              { onClick: this.handleDelete },
-              'Remove'
-            )
+            _react2.default.createElement('img', { width: '15', src: 'http://res.cloudinary.com/dt5viyxyq/image/upload/c_scale,h_41/v1472778565/x_alt-128_p7d2vo.png', onClick: this.handleDelete })
           ),
           _react2.default.createElement(
             'td',
@@ -13091,7 +13087,7 @@ var ItemForm = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'form',
-        { className: 'todo-form', onSubmit: this.handleSubmit },
+        { className: 'item-form', onSubmit: this.handleSubmit },
         _react2.default.createElement(
           'label',
           null,
@@ -13215,7 +13211,7 @@ var ItemIndex = function (_React$Component) {
       });
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'main' },
         _react2.default.createElement(
           'div',
           { className: 'header' },

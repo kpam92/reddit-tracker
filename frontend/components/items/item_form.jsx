@@ -36,7 +36,7 @@ class ItemForm extends React.Component {
   }
   render() {
     return (
-      <form className="todo-form" onSubmit={this.handleSubmit}>
+      <form className="item-form" onSubmit={this.handleSubmit}>
         <label>Item:
           <input
             className="input"

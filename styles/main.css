@@ -1,3 +1,65 @@
+html, body, section, h1, h2 {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  color: inherit;
+  background: transparent;
+}
 * {
   font-family: 'Roboto', sans-serif;
+}
+
+
+.main {
+  width:850px;
+  margin-right: auto;
+  margin-left: auto;
+  background: yellow;
+}
+
+table {
+  border-spacing: 40px 0;
+}
+label {
+  margin-right: 20px;
+}
+/*button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}*/
+
+.main h1 {
+  font-weight: 100;
+  font-size: 55px;
+}
+
+.header {
+  text-align: center;
+  margin: 8px 0;
+  padding-bottom: 20px;
+}
+
+.grand-total {
+  background: green;
+  float: left;
+  width: 224px;
+  text-align: center;
+}
+
+.center {
+  background: orange;
+  width: 618px;
+  float: left;
+  margin-right: 8px;
 }

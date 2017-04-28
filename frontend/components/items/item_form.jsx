@@ -16,7 +16,7 @@ class ItemForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    const newTotal = parseFloat(this.state.price) * parseFloat(this.state.qty);
+    const newTotal = (parseFloat(this.state.price) * parseFloat(this.state.qty)).toFixed(2);
     const newItem = Object.assign({},this.state, {id: uniqueId(), total: newTotal});
     debugger;
     this.props.receiveItem(newItem);
@@ -31,7 +31,9 @@ class ItemForm extends React.Component {
   update(property) {
     return e => this.setState({[property]: e.target.value})
   }
-
+  update_money(property) {
+    return e => this.setState({[property]: parseFloat(e.target.value).toFixed(2)})
+  }
   render() {
     return (
       <form className="todo-form" onSubmit={this.handleSubmit}>
@@ -64,7 +66,7 @@ class ItemForm extends React.Component {
             ref="price"
             value={this.state.price}
             placeholder="(no commas)"
-            onChange={this.update('price')}
+            onChange={this.update_money('price')}
             required></input>
         </label>
         <button className="create-button">Add item</button>

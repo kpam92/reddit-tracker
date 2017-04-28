@@ -21,6 +21,7 @@ class ItemIndex extends React.Component {
     );
     return(
       <div>
+        <ItemForm receiveItem={receiveItem}/>
         <table>
           <tbody>
             <tr>
@@ -32,7 +33,6 @@ class ItemIndex extends React.Component {
           </tbody>
           {itemDetails}
         </table>
-        <ItemForm receiveItem={receiveItem}/>
       </div>
     )
   };

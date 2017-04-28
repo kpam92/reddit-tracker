@@ -13091,7 +13091,11 @@ var ItemForm = function (_React$Component) {
         _react2.default.createElement(
           'label',
           null,
-          'Item:',
+          _react2.default.createElement(
+            'span',
+            { className: 'form-label' },
+            'Item:'
+          ),
           _react2.default.createElement('input', {
             className: 'input',
             ref: 'title',
@@ -13103,7 +13107,11 @@ var ItemForm = function (_React$Component) {
         _react2.default.createElement(
           'label',
           null,
-          'Qty:',
+          _react2.default.createElement(
+            'span',
+            { className: 'form-label' },
+            'Qty:'
+          ),
           _react2.default.createElement('input', {
             className: 'input',
             ref: 'qty',
@@ -13117,7 +13125,11 @@ var ItemForm = function (_React$Component) {
         _react2.default.createElement(
           'label',
           null,
-          'Price:$',
+          _react2.default.createElement(
+            'span',
+            { className: 'form-label' },
+            'Price:$'
+          ),
           _react2.default.createElement('input', {
             className: 'input',
             type: 'number',

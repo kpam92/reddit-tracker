@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import ItemIndex from './item_index'
 
-import { receiveItem, receiveItems, removeItem } from '../../actions/item_actions'
+import { receiveItem, receiveItems, removeItem, updateItem } from '../../actions/item_actions'
 import { allItems } from '../../reducers/selectors'
 
 const mapStateToProps = state => ({
@@ -11,7 +11,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   receiveItem: (item) => dispatch(receiveItem(item)),
   receiveItems: () => dispatch(receiveItems()),
-  removeItem: (item_id) => dispatch(removeItem(item_id))
+  removeItem: (item_id) => dispatch(removeItem(item_id)),
+  updateItem: (item) => dispatch(updateItem(item))
 })
 
 

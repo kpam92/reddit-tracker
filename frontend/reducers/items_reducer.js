@@ -1,4 +1,4 @@
-import {RECEIVE_ITEM, RECEIVE_ITEMS, REMOVE_ITEM } from '../actions/item_actions'
+import {RECEIVE_ITEM, RECEIVE_ITEMS, REMOVE_ITEM, UPDATE_ITEM } from '../actions/item_actions'
 import merge from 'lodash/merge';
 const initialState = {
   1: {
@@ -29,6 +29,10 @@ const ItemsReducer = (state = initialState, action) => {
     case REMOVE_ITEM:
       const nextState = merge({},state);
       delete nextState[action.item_id];
+      return nextState;
+    case REMOVE_ITEM:
+      const updatedState = merge({},state);
+      nextState[action.item.id] = action.item;
       return nextState;
     default:
       return state;

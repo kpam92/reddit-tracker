@@ -15,8 +15,7 @@ This Invoice Editor is a single page React/Redux application for creating person
 
 ### Items
 
-  Items are stored in state with variables `title`, `quantity`, `price`, `total`, and `album_id`. The initial landing page calls a  `fetchAllPhotos` dispatch to get all images to show on the initial page.
-  Items are rendered in the `ItemIndex` component, which maps over the items state, and renders each item in the `ItemDetail` component. The `ItemForm` at the top of the page creates new items, while a react-modal in `ItemDetail` allows the user to edit the component. A button in each item detail also deletes specific items.
+  Items are stored in state with variables `title`, `quantity`, `price`, `total`, and `album_id`. Items are rendered in the `ItemIndex` component, which maps over the items state, and renders each item in the `ItemDetail` component. The `ItemForm` at the top of the page creates new items, while a react-modal in `ItemDetail` allows the user to edit the component. A button in each item detail also deletes specific items.
   ```javascript
   const exampleItemState = {
     1: {

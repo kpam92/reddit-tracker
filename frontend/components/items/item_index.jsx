@@ -27,17 +27,19 @@ class ItemIndex extends React.Component {
           <h1>Invoice Editor</h1>
           <ItemForm receiveItem={receiveItem} changeAmount = {changeAmount}/>
         </div>
-        <table className='item-table'>
-          <tbody>
-            <tr>
-              <th>Item</th>
-              <th>Qty</th>
-              <th>Price</th>
-              <th>Total</th>
-            </tr>
-          </tbody>
-          {itemDetails}
-        </table>
+        <div className='center'>
+          <table className='item-table'>
+            <tbody>
+              <tr>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Total</th>
+              </tr>
+            </tbody>
+            {itemDetails}
+          </table>
+        </div>
         <TotalAmountContainer/>
       </div>
     )

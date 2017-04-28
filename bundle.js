@@ -12839,7 +12839,6 @@ var ItemDetail = function (_React$Component) {
       this.props.updateItem(updatedItem);
       this.props.changeAmount(this.startingTotal, newTotal);
       this.startingTotal = newTotal;
-      debugger;
       this.setState({ modalOpen: false });
     }
 
@@ -13228,37 +13227,41 @@ var ItemIndex = function (_React$Component) {
           _react2.default.createElement(_item_form2.default, { receiveItem: receiveItem, changeAmount: changeAmount })
         ),
         _react2.default.createElement(
-          'table',
-          { className: 'item-table' },
+          'div',
+          { className: 'center' },
           _react2.default.createElement(
-            'tbody',
-            null,
+            'table',
+            { className: 'item-table' },
             _react2.default.createElement(
-              'tr',
+              'tbody',
               null,
               _react2.default.createElement(
-                'th',
+                'tr',
                 null,
-                'Item'
-              ),
-              _react2.default.createElement(
-                'th',
-                null,
-                'Qty'
-              ),
-              _react2.default.createElement(
-                'th',
-                null,
-                'Price'
-              ),
-              _react2.default.createElement(
-                'th',
-                null,
-                'Total'
+                _react2.default.createElement(
+                  'th',
+                  null,
+                  'Item'
+                ),
+                _react2.default.createElement(
+                  'th',
+                  null,
+                  'Qty'
+                ),
+                _react2.default.createElement(
+                  'th',
+                  null,
+                  'Price'
+                ),
+                _react2.default.createElement(
+                  'th',
+                  null,
+                  'Total'
+                )
               )
-            )
-          ),
-          itemDetails
+            ),
+            itemDetails
+          )
         ),
         _react2.default.createElement(_total_amount_container2.default, null)
       );

@@ -56,7 +56,6 @@ class ItemDetail extends React.Component {
     this.props.updateItem(updatedItem);
     this.props.changeAmount(this.startingTotal,newTotal);
     this.startingTotal = newTotal;
-    debugger;
     this.setState({modalOpen: false});
   }
 

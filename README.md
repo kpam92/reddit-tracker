@@ -55,7 +55,7 @@ The `TotalAmount` component renders each variable above, and state changes throu
 
 ### Total Amount
 
-  The only action that deals with total amount is changeAmount(oldAmount,newAmount), which takes an old amount, and the new amount. This is called after each of three item actions. the old amount is subtracted from the new amount, and the result is then added to the state's subtotal; calculations for the new tax and new grand total follow.
+  The only action that deals with total amount is changeAmount(oldAmount,newAmount), which takes an old amount, and the new amount. This is called after each of three item actions. the old amount is subtracted from the new amount, and the result is then added to the states subtotal; calculations for the new tax and new grand total follow.
   ```javascript
 
   // Used for creating a new item

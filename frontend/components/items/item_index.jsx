@@ -10,7 +10,7 @@ class ItemIndex extends React.Component {
   };
 
   render(){
-    const { items, removeItem, updateItem, receiveItem } = this.props;
+    const { items, removeItem, updateItem, receiveItem, updateAmount } = this.props;
     const itemDetails = items.map(item => (
         <ItemDetail
           key={`item-list-detail${item.id}`}
@@ -22,7 +22,7 @@ class ItemIndex extends React.Component {
     );
     return(
       <div>
-        <ItemForm receiveItem={receiveItem}/>
+        <ItemForm receiveItem={receiveItem} updateAmount={updateAmount}/>
         <table>
           <tbody>
             <tr>

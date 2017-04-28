@@ -26,18 +26,24 @@ table {
 label {
   margin-right: 20px;
 }
-/*button {
+
+th {
+    font-weight: 200;
+    font-size: 23px;
+    text-decoration: underline;
+}
+button {
     background-color: #4CAF50;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 6px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 12px;
     margin: 4px 2px;
     cursor: pointer;
-}*/
+}
 
 .main h1 {
   font-weight: 100;
@@ -54,7 +60,10 @@ label {
   background: green;
   float: left;
   width: 224px;
-  text-align: center;
+  text-align: left;
+}
+.grand-total h4 {
+  padding-left: 30px;
 }
 
 .center {
@@ -62,4 +71,10 @@ label {
   width: 618px;
   float: left;
   margin-right: 8px;
+  padding: 10px 0;
+}
+
+span {
+  font-weight:100;
+  20px;
 }

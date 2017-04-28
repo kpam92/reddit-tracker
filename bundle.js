@@ -12909,7 +12909,7 @@ var ItemDetail = function (_React$Component) {
             _react2.default.createElement(
               'button',
               { onClick: this._handleClick.bind(this) },
-              'Edit Item'
+              'Edit'
             )
           ),
           _react2.default.createElement(
@@ -13402,19 +13402,34 @@ var TotalAmount = function (_React$Component) {
         _react2.default.createElement(
           'h4',
           null,
-          'Subtotal: ',
+          _react2.default.createElement(
+            'span',
+            null,
+            'Subtotal:'
+          ),
+          ' $',
           this.props.amount.subTotal
         ),
         _react2.default.createElement(
           'h4',
           null,
-          'Tax(5%): ',
+          _react2.default.createElement(
+            'span',
+            null,
+            'Tax(5%):'
+          ),
+          ' $',
           this.props.amount.tax
         ),
         _react2.default.createElement(
           'h4',
           null,
-          'Total: ',
+          _react2.default.createElement(
+            'span',
+            null,
+            'Total:'
+          ),
+          ' $',
           this.props.amount.total
         )
       );

@@ -80,7 +80,7 @@ class ItemDetail extends React.Component {
               <a className="modal-close" onClick={this.onModalClose}><img src="http://res.cloudinary.com/dt5viyxyq/image/upload/c_scale,h_41/v1472778565/x_alt-128_p7d2vo.png"/></a>
 
               <div className='modal-container'>
-                <form className="todo-form" onSubmit={this.handleSubmit}>
+                <form className="update-form-form" onSubmit={this.handleSubmit}>
                   <label>Item:
                     <input
                       className="input"

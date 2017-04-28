@@ -9,7 +9,7 @@ class ItemIndex extends React.Component {
   };
 
   render(){
-    const { items, removeItem, updateItem } = this.props;
+    const { items, removeItem, updateItem, receiveItem } = this.props;
     const itemDetails = items.map(item => (
         <ItemDetail
           key={`item-list-detail${item.id}`}

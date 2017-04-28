@@ -42,7 +42,7 @@ class ItemForm extends React.Component {
             className="input"
             ref="title"
             value={this.state.title}
-            placeholder="Sushi"
+            placeholder="i.e. Service Fees"
             onChange={this.update('title')}
             required/>
         </label>

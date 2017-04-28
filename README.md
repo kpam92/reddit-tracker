@@ -74,6 +74,10 @@ The `TotalAmount` component renders each variable above, and state changes throu
 
 I plan to add small adjustments to the project to provide better UX for the user
 
+### Jest Testing
+
+In process of implementing Jest tests on Redux reducers.
+
 ### Save and Edit Invoices
 
 Right now, the user can only create one invoice at a time. In the future, user will be able to save entire invoices and start creating new ones. Tabs of saved invoices will appear on the bottom of the screen, and will be available to be viewed and edited when clicked on.

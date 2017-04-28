@@ -15,7 +15,7 @@ class ItemDetail extends React.Component {
       total: this.props.item.total,
       id: this.props.item.id
       };
-
+    this.startingTotal = this.state.total;
     this.onModalClose = this.onModalClose.bind(this)
     this.onModalOpen = this.onModalOpen.bind(this)
 
@@ -23,6 +23,9 @@ class ItemDetail extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+
+// ---------------------------
+// functions for update modal
   onModalClose(){
   this.setState({modalOpen: false});
   ModalStyle.content.opacity = 0;
@@ -36,6 +39,9 @@ class ItemDetail extends React.Component {
     this.setState({ modalOpen: true});
   }
 
+
+// ---------------------------
+// functions to handle removing item and updating item
   handleDelete(e){
     e.preventDefault();
     const { removeItem, item } = this.props;
@@ -47,15 +53,23 @@ class ItemDetail extends React.Component {
     const newTotal = (parseFloat(this.state.price) * parseFloat(this.state.qty)).toFixed(2);
     const updatedItem = Object.assign({},this.state, { total: newTotal });
     this.props.updateItem(updatedItem);
+    this.props.changeAmount(this.startingTotal,newTotal);
+    this.startingTotal = newTotal;
+    debugger;
     this.setState({modalOpen: false});
   }
 
+
+// ---------------------------
+// functions for updating state with change input
   update(property) {
     return e => this.setState({[property]: e.target.value})
   }
   update_money(property) {
     return e => this.setState({[property]: parseFloat(e.target.value).toFixed(2)})
   }
+
+// ---------------------------
 
   render(){
     const { item, updateItem } = this.props;

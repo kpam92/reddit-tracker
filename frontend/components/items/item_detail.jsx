@@ -20,10 +20,10 @@ class ItemDetail extends React.Component {
     removeItem(item.id);
   }
   render(){
-    const { item } = this.props;
+    const { item, updateItem } = this.props;
     let update;
     if (this.state.update) {
-      update = <UpdateForm item ={ item } />;
+      update = <UpdateForm item ={ item } updateItem={ updateItem }/>;
     }
     return(
 

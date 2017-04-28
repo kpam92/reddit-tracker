@@ -10,24 +10,25 @@ class UpdateForm extends React.Component {
       title: item.title,
       qty: item.qty,
       price: item.price,
-      total: item.total
+      total: item.total,
+      id: item.id
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   };
 
   handleSubmit(e){
+    debugger;
     e.preventDefault();
     const newTotal = (parseFloat(this.state.price) * parseFloat(this.state.qty)).toFixed(2);
-    const newItem = Object.assign({},this.state, {id: uniqueId(), total: newTotal});
-    debugger;
-    this.props.receiveItem(newItem);
-    this.setState({
-      title: "",
-      qty: "",
-      price: "",
-      total: ""
-    })
+    const updatedItem = Object.assign({},this.state, { total: newTotal });
+    this.props.updateItem(updatedItem);
+    // this.setState({
+    //   title: "",
+    //   qty: "",
+    //   price: "",
+    //   total: ""
+    // })
   }
 
   update(property) {

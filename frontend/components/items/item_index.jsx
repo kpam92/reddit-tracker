@@ -9,12 +9,14 @@ class ItemIndex extends React.Component {
   };
 
   render(){
-    const { items, removeItem } = this.props;
+    const { items, removeItem, updateItem } = this.props;
     const itemDetails = items.map(item => (
         <ItemDetail
           key={`item-list-detail${item.id}`}
           item={item}
-          removeItem={ removeItem } />
+          removeItem={ removeItem }
+          updateItem= { updateItem } />
+
       )
     );
     return(

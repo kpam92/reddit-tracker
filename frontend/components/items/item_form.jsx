@@ -18,7 +18,6 @@ class ItemForm extends React.Component {
     e.preventDefault();
     const newTotal = (parseFloat(this.state.price) * parseFloat(this.state.qty)).toFixed(2);
     const newItem = Object.assign({},this.state, {id: uniqueId(), total: newTotal});
-    debugger;
     this.props.receiveItem(newItem);
     this.setState({
       title: "",

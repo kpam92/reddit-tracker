@@ -30,10 +30,12 @@ const ItemsReducer = (state = initialState, action) => {
       const nextState = merge({},state);
       delete nextState[action.item_id];
       return nextState;
-    case REMOVE_ITEM:
+    case UPDATE_ITEM:
+      debugger;
       const updatedState = merge({},state);
-      nextState[action.item.id] = action.item;
-      return nextState;
+      updatedState[action.item.id] = action.item;
+      debugger;
+      return updatedState;
     default:
       return state;
   }

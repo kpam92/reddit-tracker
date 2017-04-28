@@ -13425,6 +13425,11 @@ var TotalAmount = function (_React$Component) {
         'div',
         { className: 'grand-total' },
         _react2.default.createElement(
+          'h3',
+          null,
+          'Receipt'
+        ),
+        _react2.default.createElement(
           'h4',
           null,
           _react2.default.createElement(
@@ -13498,11 +13503,7 @@ var mapStateToProps = function mapStateToProps(state) {
   };
 };
 
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {};
-};
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_total_amount2.default);
+exports.default = (0, _reactRedux.connect)(mapStateToProps, null)(_total_amount2.default);
 
 /***/ }),
 /* 142 */

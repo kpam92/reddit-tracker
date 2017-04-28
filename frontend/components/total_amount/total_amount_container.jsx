@@ -6,13 +6,10 @@ const mapStateToProps = state => ({
   amount: state.amount
 })
 
-const mapDispatchToProps = dispatch => ({
-
-})
 
 
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(TotalAmount);

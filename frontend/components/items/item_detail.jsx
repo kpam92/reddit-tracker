@@ -24,6 +24,7 @@ class ItemDetail extends React.Component {
   }
 
 
+
 // ---------------------------
 // functions for update modal
   onModalClose(){

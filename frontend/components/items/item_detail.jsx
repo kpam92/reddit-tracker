@@ -96,7 +96,7 @@ class ItemDetail extends React.Component {
 
               <div className='modal-container'>
                 <form className="update-form-form" onSubmit={this.handleSubmit}>
-                  <label>Item:
+                  <label><span className="form-label">Item:</span>
                     <input
                       className="input"
                       ref="title"
@@ -105,7 +105,7 @@ class ItemDetail extends React.Component {
                       onChange={this.update('title')}
                       required/>
                   </label>
-                  <label>Qty:
+                  <label><span className="form-label">Qty:</span>
                     <input
                       className="input"
                       ref="qty"
@@ -116,7 +116,7 @@ class ItemDetail extends React.Component {
                       onChange={this.update('qty')}
                       required></input>
                   </label>
-                  <label>Price:$
+                  <label><span className="form-label">Price:$</span>
                     <input
                       className="input"
                       type="number"

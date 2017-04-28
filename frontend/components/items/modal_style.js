@@ -5,7 +5,7 @@ const ModalStyle = {
     left            : 0,
     right           : 0,
     bottom          : 0,
-    backgroundColor : 'rgba(53, 41, 17, 0.74902)',
+    backgroundColor : 'rgba(78, 78, 78, 0.75)',
     // z-index         : 10
   },
   content : {
@@ -14,6 +14,7 @@ const ModalStyle = {
     left            : '150px',
     right           : '150px',
     bottom          : '150px',
+    background      : '#eaeaea',
     border          : '1px solid #ccc',
     padding         : '20px',
     opacity         : '0',

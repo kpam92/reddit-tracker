@@ -47,6 +47,11 @@ button {
     cursor: pointer;
 }
 
+input {
+  border: none;
+  padding: 5px 15px;
+}
+
 .main h1 {
     font-weight: 100;
     font-size: 55px;

@@ -12942,7 +12942,11 @@ var ItemDetail = function (_React$Component) {
                   _react2.default.createElement(
                     'label',
                     null,
-                    'Item:',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'form-label' },
+                      'Item:'
+                    ),
                     _react2.default.createElement('input', {
                       className: 'input',
                       ref: 'title',
@@ -12954,7 +12958,11 @@ var ItemDetail = function (_React$Component) {
                   _react2.default.createElement(
                     'label',
                     null,
-                    'Qty:',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'form-label' },
+                      'Qty:'
+                    ),
                     _react2.default.createElement('input', {
                       className: 'input',
                       ref: 'qty',
@@ -12968,7 +12976,11 @@ var ItemDetail = function (_React$Component) {
                   _react2.default.createElement(
                     'label',
                     null,
-                    'Price:$',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'form-label' },
+                      'Price:$'
+                    ),
                     _react2.default.createElement('input', {
                       className: 'input',
                       type: 'number',
@@ -13350,7 +13362,7 @@ var ModalStyle = {
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(53, 41, 17, 0.74902)'
+    backgroundColor: 'rgba(78, 78, 78, 0.75)'
   },
   content: {
     position: 'fixed',
@@ -13358,6 +13370,7 @@ var ModalStyle = {
     left: '150px',
     right: '150px',
     bottom: '150px',
+    background: '#eaeaea',
     border: '1px solid #ccc',
     padding: '20px',
     opacity: '0',

@@ -12,7 +12,9 @@ html, body, section, h1, h2 {
   font-family: 'Roboto', sans-serif;
 }
 
-
+div {
+  border-radius: 5px;
+}
 .main {
   width:850px;
   margin-right: auto;
@@ -46,8 +48,10 @@ button {
 }
 
 .main h1 {
-  font-weight: 100;
-  font-size: 55px;
+    font-weight: 100;
+    font-size: 55px;
+    text-decoration: underline;
+    padding-bottom: 15px;
 }
 
 .header {

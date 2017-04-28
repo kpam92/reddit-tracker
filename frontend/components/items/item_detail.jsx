@@ -73,8 +73,9 @@ class ItemDetail extends React.Component {
 
   render(){
     const { item, updateItem } = this.props;
-    const fixedPrice = (parseInt(item.price)).toFixed(2);
-    const fixedTotal = (parseInt(item.total)).toFixed(2);
+    const fixedPrice = (parseFloat(item.price)).toFixed(2);
+    const fixedTotal = (parseFloat(item.total)).toFixed(2);
+
     return(
 
       <tbody>

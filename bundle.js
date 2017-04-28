@@ -12873,8 +12873,9 @@ var ItemDetail = function (_React$Component) {
           item = _props2.item,
           updateItem = _props2.updateItem;
 
-      var fixedPrice = parseInt(item.price).toFixed(2);
-      var fixedTotal = parseInt(item.total).toFixed(2);
+      var fixedPrice = parseFloat(item.price).toFixed(2);
+      var fixedTotal = parseFloat(item.total).toFixed(2);
+
       return _react2.default.createElement(
         'tbody',
         null,

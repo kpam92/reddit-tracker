@@ -10,21 +10,20 @@ class ItemIndex extends React.Component {
   };
 
   render(){
-    const { items, removeItem, updateItem, receiveItem, updateAmount, changeAmount } = this.props;
+    const { items, removeItem, updateItem, receiveItem, changeAmount } = this.props;
     const itemDetails = items.map(item => (
         <ItemDetail
           key={`item-list-detail${item.id}`}
           item={item}
           removeItem={ removeItem }
           updateItem= { updateItem }
-          updateAmount= { updateAmount }
           changeAmount= { changeAmount } />
 
       )
     );
     return(
       <div>
-        <ItemForm receiveItem={receiveItem} updateAmount={updateAmount} changeAmount = {changeAmount}/>
+        <ItemForm receiveItem={receiveItem} changeAmount = {changeAmount}/>
         <table>
           <tbody>
             <tr>

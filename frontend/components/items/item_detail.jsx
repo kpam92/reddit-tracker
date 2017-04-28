@@ -2,7 +2,6 @@ import React from 'react';
 import Modal from 'react-modal';
 import ModalStyle from './modal_style'
 
-import UpdateForm from './update_form';
 
 class ItemDetail extends React.Component {
   constructor(props){
@@ -21,7 +20,6 @@ class ItemDetail extends React.Component {
     this.onModalOpen = this.onModalOpen.bind(this)
 
     this.handleDelete = this.handleDelete.bind(this);
-    this.toggleUpdate = this.toggleUpdate.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -36,11 +34,6 @@ class ItemDetail extends React.Component {
 
   _handleClick() {
     this.setState({ modalOpen: true});
-  }
-
-  toggleUpdate(e) {
-    e.preventDefault();
-    this.setState({ update: !this.state.update });
   }
 
   handleDelete(e){
@@ -66,10 +59,7 @@ class ItemDetail extends React.Component {
 
   render(){
     const { item, updateItem } = this.props;
-    let update;
-    if (this.state.update) {
-      update = <UpdateForm item ={ item } updateItem={ updateItem }/>;
-    }
+
     return(
 
       <tbody>

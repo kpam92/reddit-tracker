@@ -23,6 +23,7 @@ class ItemIndex extends React.Component {
     );
     return(
       <div>
+        <h1>Invoice Editor</h1>
         <ItemForm receiveItem={receiveItem} changeAmount = {changeAmount}/>
         <table>
           <tbody>

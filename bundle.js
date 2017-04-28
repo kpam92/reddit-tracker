@@ -13151,6 +13151,11 @@ var ItemIndex = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Invoice Editor'
+        ),
         _react2.default.createElement(_item_form2.default, { receiveItem: receiveItem, changeAmount: changeAmount }),
         _react2.default.createElement(
           'table',

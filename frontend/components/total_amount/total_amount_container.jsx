@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  changeTax = tax => dispatch(changeTax(tax))
+  changeTax: tax => dispatch(changeTax(tax))
 });
 
 

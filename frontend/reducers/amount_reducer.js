@@ -22,7 +22,9 @@ const AmountReducer = (state = initialState, action) => {
     // amount change will be called right after change tax
     // i.e. changeAmount(0,0)
       const newState = merge({},state)
+      debugger;
       newState["currTax"] = action.tax;
+      debugger;
       return newState;
     default:
       return state;

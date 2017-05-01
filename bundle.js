@@ -13425,6 +13425,7 @@ var TotalAmount = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (TotalAmount.__proto__ || Object.getPrototypeOf(TotalAmount)).call(this, props));
 
+    _this.state = { newTax: _this.props.amount.currTax * 100 };
     _this.handleSubmit = _this.handleSubmit.bind(_this);
     return _this;
   }
@@ -13433,16 +13434,10 @@ var TotalAmount = function (_React$Component) {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
       e.preventDefault();
-      var newTotal = (parseFloat(this.state.price) * parseFloat(this.state.qty)).toFixed(2);
-      var newItem = Object.assign({}, this.state, { id: uniqueId(), total: newTotal });
-      this.props.receiveItem(newItem);
-      this.props.changeAmount(0, parseFloat(newItem['total']));
-      this.setState({
-        title: "",
-        qty: "",
-        price: "",
-        total: ""
-      });
+      var newTax = this.state.newTax * .01;
+      this.props.changeTax(newTax);
+      this.props.changeAmount(0, 0);
+      this.setState({ newTax: this.props.amount.currTax * 100 });
     }
   }, {
     key: 'update',
@@ -13481,7 +13476,9 @@ var TotalAmount = function (_React$Component) {
           _react2.default.createElement(
             'span',
             null,
-            'Tax(5%):'
+            'Tax(',
+            parseInt(this.props.amount.currTax * 100),
+            '%):'
           ),
           ' $',
           this.props.amount.tax
@@ -13502,6 +13499,8 @@ var TotalAmount = function (_React$Component) {
             this.props.amount.total
           )
         ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
         _react2.default.createElement(
           'h4',
           null,
@@ -13514,20 +13513,24 @@ var TotalAmount = function (_React$Component) {
               _react2.default.createElement(
                 'span',
                 { className: 'form-label' },
-                'Item:'
+                'Change Tax (steps 1%):'
               ),
               _react2.default.createElement('input', {
                 className: 'input',
                 ref: 'tax',
-                value: this.props.amount.currTax,
+                type: 'number',
+                min: '0',
+                step: '1',
+                value: this.state.newTax,
                 placeholder: 'i.e. Service Fees',
-                onChange: this.update('title'),
-                required: true })
+                onChange: this.update('newTax'),
+                required: true }),
+              '%'
             ),
             _react2.default.createElement(
               'button',
               { className: 'create-button' },
-              'Add item'
+              'Submit'
             )
           )
         )
@@ -13573,6 +13576,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     changeTax: function changeTax(tax) {
       return dispatch((0, _amount_actions.changeTax)(tax));
+    },
+    changeAmount: function changeAmount(oldAmount, newAmount) {
+      return dispatch((0, _amount_actions.changeAmount)(oldAmount, newAmount));
     }
   };
 };
@@ -13660,7 +13666,9 @@ var AmountReducer = function AmountReducer() {
       // amount change will be called right after change tax
       // i.e. changeAmount(0,0)
       var newState = (0, _merge2.default)({}, state);
+      debugger;
       newState["currTax"] = action.tax;
+      debugger;
       return newState;
     default:
       return state;

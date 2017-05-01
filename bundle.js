@@ -13535,6 +13535,8 @@ var _store2 = _interopRequireDefault(_store);
 
 var _item_actions = __webpack_require__(43);
 
+var _amount_actions = __webpack_require__(73);
+
 var _root = __webpack_require__(132);
 
 var _root2 = _interopRequireDefault(_root);
@@ -13545,7 +13547,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var store = _store2.default;
   window.store = store;
   window.receiveItem = _item_actions.receiveItem;
-  window.receiveItems = _item_actions.receiveItems;
+  window.changeTax = _amount_actions.changeTax;
   var root = document.getElementById('content');
   _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), root);
 });
@@ -13588,6 +13590,13 @@ var AmountReducer = function AmountReducer() {
       var newTotal = (parseFloat(newSubTotal) + parseFloat(newTax)).toFixed(2);
       var updatedState = { subTotal: newSubTotal, tax: newTax, total: newTotal, currTax: state.currTax };
       return updatedState;
+    case _amount_actions.CHANGE_TAX:
+      // tax be changed to decimal when called
+      // amount change will be called right after change tax
+      // i.e. changeAmount(0,0)
+      var newState = (0, _merge2.default)({}, state);
+      newState["currTax"] = action.tax;
+      return newState;
     default:
       return state;
   }

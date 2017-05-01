@@ -1,4 +1,4 @@
-import { UPDATE_AMOUNT, CHANGE_AMOUNT } from '../actions/amount_actions'
+import { CHANGE_TAX, CHANGE_AMOUNT } from '../actions/amount_actions'
 import merge from 'lodash/merge';
 
 const initialState = {
@@ -17,6 +17,13 @@ const AmountReducer = (state = initialState, action) => {
       const newTotal = (parseFloat(newSubTotal) + parseFloat(newTax)).toFixed(2);
       const updatedState = {subTotal: newSubTotal, tax: newTax, total: newTotal, currTax: state.currTax};
       return updatedState;
+    case CHANGE_TAX:
+    // tax be changed to decimal when called
+    // amount change will be called right after change tax
+    // i.e. changeAmount(0,0)
+      const newState = merge({},state)
+      newState["currTax"] = action.tax;
+      return newState;
     default:
       return state;
   }

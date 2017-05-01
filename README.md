@@ -40,6 +40,7 @@ The `TotalAmount` state contains `subTotal`, `tax`, and `total`.
 ```javascript
 const exampleTotalAmountState = {
     subTotal: 51.98,
+    currTax: 0.05,
     tax: (2.60).toFixed(2),
     total: 54.58,
 };
@@ -56,7 +57,7 @@ The `TotalAmount` component renders each variable above, and state changes throu
 
 ###Total Amount
 
-  The only action that deals with total amount is changeAmount(oldAmount,newAmount), which takes an old amount, and the new amount. This is called after each of three item actions. the old amount is subtracted from the new amount, and the result is then added to the states subtotal; calculations for the new tax and new grand total follow.
+  The first action that deals with total amount is changeAmount(oldAmount,newAmount), which takes an old amount, and the new amount. This is called after each of three item actions. the old amount is subtracted from the new amount, and the result is then added to the states subtotal; calculations for the new tax and new grand total follow.
   ```javascript
 
   // Used for creating a new item
@@ -69,6 +70,8 @@ The `TotalAmount` component renders each variable above, and state changes throu
   changeAmount(100,50) // diff = (50 - 100); newState.subTotal += diff
 
   ```
+
+  The second action, changeTax(tax), takes in a number as an argument, and alters the currTax of the amount state. When this is called after submission of the tax form in the component, it changes the currTax, then calls changeAmount(0,0) to update the other values with the new tax.
 
 ## Future Directions for the Project
 

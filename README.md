@@ -36,7 +36,7 @@ This Invoice Editor is a single page React/Redux application for creating person
   ```
 ### Total Amount
 
-The `TotalAmount` state contains `subTotal`, `tax`, and `total`.
+The `TotalAmount` state contains `subTotal`,`currTax`(the actual percentage), `tax`(the added tax amount), and `total`.
 ```javascript
 const exampleTotalAmountState = {
     subTotal: 51.98,
@@ -84,7 +84,3 @@ In process of implementing Jest tests on Redux reducers.
 ### Save and Edit Invoices
 
 Right now, the user can only create one invoice at a time. In the future, user will be able to save entire invoices and start creating new ones. Tabs of saved invoices will appear on the bottom of the screen, and will be available to be viewed and edited when clicked on.
-
-### Make Tax Changeable
-
-Also, a future adjustment is to make the tax section adjustable as it varies from area to area. This would include changing the total amount state to include a tax variable that can be changed with a new amount dispatch action.

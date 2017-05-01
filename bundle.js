@@ -7387,6 +7387,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var CHANGE_AMOUNT = exports.CHANGE_AMOUNT = "CHANGE_AMOUNT";
+var CHANGE_TAX = exports.CHANGE_TAX = "CHANGE_TAX";
 
 var changeAmount = exports.changeAmount = function changeAmount(oldTotal, newTotal) {
   return {

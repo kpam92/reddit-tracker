@@ -13505,7 +13505,7 @@ var TotalAmount = function (_React$Component) {
           null,
           _react2.default.createElement(
             'form',
-            { className: 'item-form', onSubmit: this.handleSubmit },
+            { className: 'tax-form', onSubmit: this.handleSubmit },
             _react2.default.createElement(
               'label',
               null,

@@ -29,7 +29,7 @@ class TotalAmount extends React.Component {
         <br/>
         <h4>
           <form className="item-form" onSubmit={this.handleSubmit}>
-            <label><span className='form-label'>Change Tax (steps 1%):</span>
+            <label><span className='tax-form'>Change Tax (steps 1%):</span>
               <input
                 className="input"
                 ref="tax"

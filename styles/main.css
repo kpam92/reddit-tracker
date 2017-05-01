@@ -105,3 +105,7 @@ span {
 .form-label {
   padding-right: 6px;
 }
+
+.item-form label input {
+  width: 60px;
+}

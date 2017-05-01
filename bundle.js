@@ -13511,7 +13511,7 @@ var TotalAmount = function (_React$Component) {
               null,
               _react2.default.createElement(
                 'span',
-                { className: 'form-label' },
+                { className: 'tax-form' },
                 'Change Tax (steps 1%):'
               ),
               _react2.default.createElement('input', {

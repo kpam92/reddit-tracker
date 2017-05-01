@@ -7398,6 +7398,13 @@ var changeAmount = exports.changeAmount = function changeAmount(oldTotal, newTot
   };
 };
 
+var changeTax = exports.changeTax = function changeTax(tax) {
+  return {
+    type: CHANGE_TAX,
+    tax: tax
+  };
+};
+
 /***/ }),
 /* 74 */
 /***/ (function(module, exports, __webpack_require__) {

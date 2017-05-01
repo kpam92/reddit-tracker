@@ -8,3 +8,8 @@ export const changeAmount = (oldTotal,newTotal) => ({
   newTotal
 
 });
+
+export const changeTax = tax => ({
+  type: CHANGE_TAX,
+  tax
+});

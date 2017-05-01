@@ -13571,6 +13571,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var initialState = {
   subTotal: 51.98,
+  currTax: 0.05,
   tax: 2.60.toFixed(2),
   total: 54.58
 };
@@ -13583,9 +13584,9 @@ var AmountReducer = function AmountReducer() {
     case _amount_actions.CHANGE_AMOUNT:
       var difference = (parseFloat(action.newTotal) - parseFloat(action.oldTotal)).toFixed(2);
       var newSubTotal = (parseFloat(difference) + parseFloat(state.subTotal)).toFixed(2);
-      var newTax = (parseFloat(newSubTotal) * .05).toFixed(2);
+      var newTax = (parseFloat(newSubTotal) * state.currTax).toFixed(2);
       var newTotal = (parseFloat(newSubTotal) + parseFloat(newTax)).toFixed(2);
-      var updatedState = { subTotal: newSubTotal, tax: newTax, total: newTotal };
+      var updatedState = { subTotal: newSubTotal, tax: newTax, total: newTotal, currTax: state.currTax };
       return updatedState;
     default:
       return state;

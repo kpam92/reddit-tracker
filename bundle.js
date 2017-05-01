@@ -13437,7 +13437,6 @@ var TotalAmount = function (_React$Component) {
       var newTax = this.state.newTax * .01;
       this.props.changeTax(newTax);
       this.props.changeAmount(0, 0);
-      this.setState({ newTax: this.props.amount.currTax * 100 });
     }
   }, {
     key: 'update',
@@ -13522,7 +13521,7 @@ var TotalAmount = function (_React$Component) {
                 min: '0',
                 step: '1',
                 value: this.state.newTax,
-                placeholder: 'i.e. Service Fees',
+                placeholder: 'i.e. 6',
                 onChange: this.update('newTax'),
                 required: true }),
               '%'

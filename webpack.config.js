@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-  entry: './frontend/react-invoice.jsx',
+  entry: './frontend/reddit-tracker.jsx',
   output: {
     filename: './bundle.js',
   },

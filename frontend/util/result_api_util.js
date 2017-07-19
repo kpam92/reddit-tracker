@@ -10,6 +10,6 @@ export const fetchComments= (username) => {
 export const fetchPosts= (username) => {
   return $.ajax({
     method: 'GET' ,
-    url: `https://www.reddit.com/user/${username}/posts.json`
+    url: `https://www.reddit.com/user/${username}/submitted.json`
   })
 }

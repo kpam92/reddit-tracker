@@ -1,8 +1,8 @@
-export const CHANGE_COMMENTS = "CHANGE_COMMENTS";
-export const CHANGE_POSTS = "CHANGE_POSTS";
+export const RECEIVE_COMMENTS = "RECEIVE_COMMENTS";
+export const RECEIVE_POSTS = "RECEIVE_POSTS";
 import * as APIUtil from '../util/result_api_util'
 
-export const changeComments = comments => ({
+export const receiveComments = comments => ({
   type: RECEIVE_COMMENTS,
   comments
 });
@@ -18,7 +18,7 @@ export const changePosts = (username) => dispatch => (
   ))
 )
 
-export const changeComment = (username) => dispatch => (
+export const changeComments = (username) => dispatch => (
   APIUtil.fetchComments(username).then(comments => (
     dispatch(receiveComments(comments))
   ))

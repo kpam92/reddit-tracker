@@ -7,7 +7,12 @@ class Form extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(){
+  handleSubmit(e){
+    debugger;
+    const { fetchPosts, fetchComments } = this.props
+    e.preventDefault();
+    this.props.fetchPosts(this.state.input);
+    this.props.fetchComments(this.state.input);
 
   }
 
@@ -33,3 +38,5 @@ class Form extends React.Component {
     );
   }
 }
+
+export default Form;

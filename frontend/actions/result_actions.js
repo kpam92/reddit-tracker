@@ -12,13 +12,13 @@ export const receivePosts = posts => ({
   posts
 });
 
-export const changePosts = (username) => dispatch => (
+export const fetchPosts = (username) => dispatch => (
   APIUtil.fetchPosts(username).then(posts => (
     dispatch(receivePosts(posts))
   ))
 )
 
-export const changeComments = (username) => dispatch => (
+export const fetchComments = (username) => dispatch => (
   APIUtil.fetchComments(username).then(comments => (
     dispatch(receiveComments(comments))
   ))

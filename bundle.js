@@ -4932,7 +4932,7 @@ module.exports = function(module) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.changeComments = exports.changePosts = exports.receivePosts = exports.receiveComments = exports.RECEIVE_POSTS = exports.RECEIVE_COMMENTS = undefined;
+exports.fetchComments = exports.fetchPosts = exports.receivePosts = exports.receiveComments = exports.RECEIVE_POSTS = exports.RECEIVE_COMMENTS = undefined;
 
 var _result_api_util = __webpack_require__(134);
 
@@ -4956,7 +4956,7 @@ var receivePosts = exports.receivePosts = function receivePosts(posts) {
   };
 };
 
-var changePosts = exports.changePosts = function changePosts(username) {
+var fetchPosts = exports.fetchPosts = function fetchPosts(username) {
   return function (dispatch) {
     return APIUtil.fetchPosts(username).then(function (posts) {
       return dispatch(receivePosts(posts));
@@ -4964,7 +4964,7 @@ var changePosts = exports.changePosts = function changePosts(username) {
   };
 };
 
-var changeComments = exports.changeComments = function changeComments(username) {
+var fetchComments = exports.fetchComments = function fetchComments(username) {
   return function (dispatch) {
     return APIUtil.fetchComments(username).then(function (comments) {
       return dispatch(receiveComments(comments));
@@ -11963,12 +11963,18 @@ var _react = __webpack_require__(22);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _results_container = __webpack_require__(328);
+
+var _results_container2 = _interopRequireDefault(_results_container);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import ItemIndexContainer from './items/item_index_container';
-
 var App = function App() {
-  return _react2.default.createElement('div', null);
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(_results_container2.default, null)
+  );
 };
 
 exports.default = App;
@@ -12002,9 +12008,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 document.addEventListener('DOMContentLoaded', function () {
   var store = (0, _store2.default)();
-  window.store = (0, _store2.default)();
-  window.changePosts = _result_actions.changePosts;
-  window.changeComments = _result_actions.changeComments;
+  window.store = store;
+  window.fetchPosts = _result_actions.fetchPosts;
+  window.fetchComments = _result_actions.fetchComments;
   var root = document.getElementById('content');
   _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), root);
 });
@@ -12029,16 +12035,16 @@ var _result_actions = __webpack_require__(43);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var CommentsReducer = function CommentsReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var action = arguments[1];
 
   switch (action.type) {
     case _result_actions.RECEIVE_COMMENTS:
-      // debugger;
       var current_comments = action.comments.data.children.slice(0, 25);
       current_comments = current_comments.map(function (comment) {
         return comment = comment.data.body;
       });
+      debugger;
       return current_comments;
     default:
       return state;
@@ -27556,6 +27562,210 @@ function symbolObservablePonyfill(root) {
 
 	return result;
 };
+
+/***/ }),
+/* 327 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(22);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _form = __webpack_require__(329);
+
+var _form2 = _interopRequireDefault(_form);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Results = function (_React$Component) {
+  _inherits(Results, _React$Component);
+
+  function Results(props) {
+    _classCallCheck(this, Results);
+
+    return _possibleConstructorReturn(this, (Results.__proto__ || Object.getPrototypeOf(Results)).call(this, props));
+  }
+
+  // componentDidMount(){
+  //   debugger;
+  // }
+
+
+  _createClass(Results, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          fetchPosts = _props.fetchPosts,
+          fetchComments = _props.fetchComments;
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h1',
+          null,
+          'this is the results components'
+        ),
+        _react2.default.createElement(_form2.default, { fetchComments: fetchComments, fetchPosts: fetchPosts })
+      );
+    }
+  }]);
+
+  return Results;
+}(_react2.default.Component);
+
+exports.default = Results;
+
+/***/ }),
+/* 328 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(304);
+
+var _result_actions = __webpack_require__(43);
+
+var _results = __webpack_require__(327);
+
+var _results2 = _interopRequireDefault(_results);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    comments: state.comments,
+    posts: state.posts
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchPosts: function fetchPosts(username) {
+      return dispatch((0, _result_actions.fetchPosts)(username));
+    },
+    fetchComments: function fetchComments(username) {
+      return dispatch((0, _result_actions.fetchComments)(username));
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_results2.default);
+
+/***/ }),
+/* 329 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(22);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Form = function (_React$Component) {
+  _inherits(Form, _React$Component);
+
+  function Form(props) {
+    _classCallCheck(this, Form);
+
+    var _this = _possibleConstructorReturn(this, (Form.__proto__ || Object.getPrototypeOf(Form)).call(this, props));
+
+    _this.state = { input: "" };
+    _this.handleSubmit = _this.handleSubmit.bind(_this);
+    return _this;
+  }
+
+  _createClass(Form, [{
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      debugger;
+      var _props = this.props,
+          fetchPosts = _props.fetchPosts,
+          fetchComments = _props.fetchComments;
+
+      e.preventDefault();
+      this.props.fetchPosts(this.state.input);
+      this.props.fetchComments(this.state.input);
+    }
+  }, {
+    key: "update",
+    value: function update() {
+      var _this2 = this;
+
+      return function (e) {
+        return _this2.setState({ input: e.target.value });
+      };
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "form",
+        { className: "form", onSubmit: this.handleSubmit },
+        _react2.default.createElement(
+          "label",
+          null,
+          _react2.default.createElement(
+            "span",
+            { className: "form-label" },
+            "Change Username:"
+          ),
+          _react2.default.createElement("input", {
+            className: "username",
+            ref: "username",
+            value: this.state.input,
+            placeholder: "i.e. kijafa",
+            onChange: this.update(),
+            required: true })
+        ),
+        _react2.default.createElement(
+          "button",
+          { className: "button" },
+          "Search User"
+        )
+      );
+    }
+  }]);
+
+  return Form;
+}(_react2.default.Component);
+
+exports.default = Form;
 
 /***/ })
 /******/ ]);

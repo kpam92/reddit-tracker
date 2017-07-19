@@ -1,9 +1,9 @@
 import React from 'react';
-// import ItemIndexContainer from './items/item_index_container';
+import ResultsContainer from './display/results_container';
 
 const App = () => (
   <div>
-
+    <ResultsContainer/>
   </div>
 );
 
